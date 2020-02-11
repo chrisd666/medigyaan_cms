@@ -1,0 +1,18 @@
+{
+  "info": {
+    "name": "Book List"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "bookList": {
+      "type": "component",
+      "repeatable": false,
+      "component": "lists.resource-list"
+    }
+  },
+  "connection": "default",
+  "collectionName": "book_lists"
+}

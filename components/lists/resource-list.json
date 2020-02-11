@@ -1,0 +1,19 @@
+{
+  "connection": "default",
+  "collectionName": "components_lists_resource_lists",
+  "info": {
+    "name": "Resource List",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}
