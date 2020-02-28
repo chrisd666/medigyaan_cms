@@ -1,4 +1,6 @@
 {
+  "connection": "default",
+  "collectionName": "book_lists",
   "info": {
     "name": "Book List"
   },
@@ -11,8 +13,10 @@
       "type": "component",
       "repeatable": false,
       "component": "lists.resource-list"
+    },
+    "books": {
+      "via": "book_list",
+      "collection": "books"
     }
-  },
-  "connection": "default",
-  "collectionName": "book_lists"
+  }
 }

@@ -1,0 +1,29 @@
+{
+  "connection": "default",
+  "collectionName": "books",
+  "info": {
+    "name": "Books"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "book_list": {
+      "model": "book-list",
+      "via": "books"
+    }
+  }
+}

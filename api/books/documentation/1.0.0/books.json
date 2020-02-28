@@ -1,19 +1,18 @@
 {
   "paths": {
-    "/book-lists": {
+    "/books": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the books's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve books document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Books"
                   }
                 }
               }
@@ -52,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Book-list"
+          "Books"
         ],
         "parameters": [
           {
@@ -195,18 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new books record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve books document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Books"
                 }
               }
             }
@@ -244,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Book-list"
+          "Books"
         ],
         "requestBody": {
           "description": "",
@@ -252,26 +247,26 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewBook-list"
+                "$ref": "#/components/schemas/NewBooks"
               }
             }
           }
         }
       }
     },
-    "/book-lists/count": {
+    "/books/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of books documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve books document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "properties": {
-                    "foo": {
-                      "type": "string"
+                    "count": {
+                      "type": "integer"
                     }
                   }
                 }
@@ -311,26 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Book-list"
+          "Books"
         ],
         "parameters": []
       }
     },
-    "/book-lists/{id}": {
+    "/books/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one books record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve books document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Books"
                 }
               }
             }
@@ -368,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Book-list"
+          "Books"
         ],
         "parameters": [
           {
@@ -385,18 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single books record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve books document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Books"
                 }
               }
             }
@@ -434,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Book-list"
+          "Books"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewBook-list"
+                "$ref": "#/components/schemas/NewBooks"
               }
             }
           }
@@ -462,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single books record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single books based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -508,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Book-list"
+          "Books"
         ],
         "parameters": [
           {
@@ -527,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Book-list": {
+      "Books": {
         "required": [
           "id"
         ],
@@ -535,11 +522,21 @@
           "id": {
             "type": "string"
           },
-          "bookList": {
-            "type": "object",
+          "name": {
+            "type": "string"
+          },
+          "link": {
+            "type": "string"
+          },
+          "cover": {
             "required": [
               "id",
-              "name"
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
             ],
             "properties": {
               "id": {
@@ -548,31 +545,49 @@
               "name": {
                 "type": "string"
               },
-              "link": {
+              "hash": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
                 "type": "string"
               }
             }
           },
-          "books": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "link": {
-                  "type": "string"
-                },
-                "cover": {
-                  "type": "string"
-                },
-                "book_list": {
+          "book_list": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "bookList": {
+                "type": "component"
+              },
+              "books": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
               }
@@ -580,35 +595,24 @@
           }
         }
       },
-      "NewBook-list": {
+      "NewBooks": {
         "properties": {
-          "bookList": {
-            "type": "object",
-            "required": [
-              "id",
-              "name"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "link": {
-                "type": "string"
-              }
-            }
+          "name": {
+            "type": "string"
           },
-          "books": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "link": {
+            "type": "string"
+          },
+          "book_list": {
+            "type": "string"
           }
         }
       }
     }
   },
-  "tags": []
+  "tags": [
+    {
+      "name": "Books"
+    }
+  ]
 }
