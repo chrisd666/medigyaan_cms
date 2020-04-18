@@ -1,0 +1,22 @@
+{
+  "info": {
+    "name": "Question Paper"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "subject": {
+      "model": "subject"
+    },
+    "Type": {
+      "type": "string"
+    }
+  },
+  "connection": "default",
+  "collectionName": "question_papers"
+}

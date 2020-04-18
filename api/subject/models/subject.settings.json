@@ -1,0 +1,19 @@
+{
+  "connection": "default",
+  "collectionName": "subjects",
+  "info": {
+    "name": "Subject"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Academic_Year": {
+      "type": "string"
+    }
+  }
+}

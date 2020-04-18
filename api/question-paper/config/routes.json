@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/question-papers",
+      "handler": "question-paper.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/question-papers/count",
+      "handler": "question-paper.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/question-papers/:id",
+      "handler": "question-paper.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/question-papers",
+      "handler": "question-paper.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/question-papers/:id",
+      "handler": "question-paper.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/question-papers/:id",
+      "handler": "question-paper.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
