@@ -1,0 +1,21 @@
+{
+  "info": {
+    "name": "Organ"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Organ": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.image-element"
+    },
+    "organ_type": {
+      "model": "organ-type"
+    }
+  },
+  "connection": "default",
+  "collectionName": "organs"
+}

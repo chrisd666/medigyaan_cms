@@ -1,0 +1,20 @@
+{
+  "info": {
+    "name": "Image Element",
+    "icon": "image"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    }
+  },
+  "connection": "default",
+  "collectionName": "components_image_image_elements"
+}

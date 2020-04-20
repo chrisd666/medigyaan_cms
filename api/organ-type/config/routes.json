@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/organ-types",
+      "handler": "organ-type.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/organ-types/count",
+      "handler": "organ-type.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/organ-types/:id",
+      "handler": "organ-type.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/organ-types",
+      "handler": "organ-type.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/organ-types/:id",
+      "handler": "organ-type.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/organ-types/:id",
+      "handler": "organ-type.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

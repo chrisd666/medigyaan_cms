@@ -1,0 +1,16 @@
+{
+  "connection": "default",
+  "collectionName": "organ_types",
+  "info": {
+    "name": "Organ Type"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    }
+  }
+}
