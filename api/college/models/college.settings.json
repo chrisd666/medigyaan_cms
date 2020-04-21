@@ -1,0 +1,46 @@
+{
+  "info": {
+    "name": "College"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Background_Image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "Emblem_Image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "Address": {
+      "type": "string"
+    },
+    "Phone_Number": {
+      "type": "string"
+    },
+    "Website": {
+      "type": "string"
+    },
+    "Email_Address": {
+      "type": "email"
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "region": {
+      "model": "region"
+    }
+  },
+  "connection": "default",
+  "collectionName": "colleges"
+}

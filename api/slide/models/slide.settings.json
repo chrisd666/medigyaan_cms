@@ -1,0 +1,21 @@
+{
+  "info": {
+    "name": "Slide"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Slide": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.image-element"
+    },
+    "slide_type": {
+      "model": "slide-type"
+    }
+  },
+  "connection": "default",
+  "collectionName": "slides"
+}

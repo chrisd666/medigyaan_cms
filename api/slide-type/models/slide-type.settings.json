@@ -1,0 +1,16 @@
+{
+  "connection": "default",
+  "collectionName": "slide_types",
+  "info": {
+    "name": "Slide Type"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    }
+  }
+}

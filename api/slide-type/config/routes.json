@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/slide-types",
+      "handler": "slide-type.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/slide-types/count",
+      "handler": "slide-type.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/slide-types/:id",
+      "handler": "slide-type.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/slide-types",
+      "handler": "slide-type.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/slide-types/:id",
+      "handler": "slide-type.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/slide-types/:id",
+      "handler": "slide-type.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
