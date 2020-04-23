@@ -1,4 +1,6 @@
 {
+  "connection": "default",
+  "collectionName": "question_papers",
   "info": {
     "name": "Question Paper"
   },
@@ -15,8 +17,12 @@
     },
     "Type": {
       "type": "string"
+    },
+    "Question_Paper": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
     }
-  },
-  "connection": "default",
-  "collectionName": "question_papers"
+  }
 }
